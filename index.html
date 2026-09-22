@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XYVIIEE ARCHIVE // PERSONAL PORTOFOLIO</title>
     <style>
-        /* --- GENSHIN MONDSTADT / DAYLIGHT VIBES --- */
+        /* --- DARK ELECTRO / INAZUMA VIBES CONFIG --- */
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
         * {
@@ -16,12 +16,25 @@
         }
 
         body {
-            /* Gradien cerah ala langit dan padang rumput Mondstadt */
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 50%, #dbeafe 100%);
+            /* Gradien Hitam - Abu gelap - Ungu pekat */
+            background: linear-gradient(135deg, #09090b 0%, #18181b 40%, #2e1065 100%);
             background-attachment: fixed; 
-            color: #1e293b;
+            color: #e2e8f0;
             overflow-x: hidden;
             padding: 0 6%;
+            position: relative;
+        }
+
+        /* Ornamen Garis Cahaya di Latar Belakang */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
         }
 
         nav {
@@ -29,7 +42,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 30px 0;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
         }
 
         .logo {
@@ -37,11 +50,11 @@
             font-size: 1.2rem;
             letter-spacing: -0.5px;
             text-transform: uppercase;
-            color: #0f172a;
+            color: #f8fafc;
         }
 
         .logo span {
-            color: #3b82f6; /* Biru Genshin */
+            color: #a855f7; /* Ungu terang */
             font-weight: 400;
         }
 
@@ -51,16 +64,18 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
         }
 
-        /* --- STRUKTUR PIRAMIDA --- */
+        /* --- STRUKTUR PIRAMIDA DARK MODE --- */
         .pyramid-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
             margin-bottom: 30px;
+            position: relative;
         }
 
         .pyramid-top {
@@ -76,9 +91,9 @@
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 15px;
-            border: 4px solid #ffffff;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-            background: #fff;
+            border: 3px solid rgba(167, 139, 250, 0.5);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+            background: #18181b; /* Warna dasar biar gak putih silau kalau foto gagal load */
         }
 
         .profile-frame img {
@@ -87,27 +102,30 @@
             object-fit: cover;
         }
 
-        /* Bintang Genshin Emas */
+        /* Ornamen Bintang Electro Bersinar */
         .genshin-star {
-            color: #fbbf24; 
+            color: #d8b4fe; 
             font-size: 2.5rem; 
             margin-top: -25px; 
             margin-bottom: 5px; 
-            text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+            text-shadow: 0 0 20px #a855f7;
         }
 
         .pyramid-top h1 {
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
             line-height: 1;
-            letter-spacing: -1.5px;
+            letter-spacing: -1px;
             text-transform: uppercase;
-            color: #0f172a;
+            color: #f8fafc;
             margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
         .pyramid-top h1 span {
-            color: #3b82f6;
+            color: transparent;
+            -webkit-text-stroke: 1px #a855f7;
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
         }
 
         .pyramid-base {
@@ -118,34 +136,45 @@
             max-width: 900px;
         }
 
-        /* Kotak Info ala Menu Paimon (Glassmorphism Putih) */
+        /* Kotak Info Dark Glassmorphism */
         .info-card {
-            background: rgba(255, 255, 255, 0.6); 
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: rgba(15, 15, 20, 0.6); 
+            border: 1px solid rgba(139, 92, 246, 0.3);
             padding: 25px 30px;
             width: 100%;
             max-width: 380px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(12px);
-            /* Potongan sudut miring di kanan atas ala UI Genshin */
             clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
             transition: 0.3s;
+            position: relative;
+        }
+
+        /* Ornamen titik di sudut */
+        .info-card::after {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px;
+            width: 4px; height: 4px;
+            background: #a855f7;
+            box-shadow: 0 0 10px #a855f7;
         }
 
         .info-card:hover {
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
             transform: translateY(-5px);
-            border-left: 4px solid #fbbf24; /* Aksen emas saat disentuh */
+            border-color: rgba(167, 139, 250, 0.8);
+            border-left: 3px solid #a855f7;
         }
 
         .card-title {
             font-weight: 800;
-            color: #1e293b;
+            color: #d8b4fe;
             margin-bottom: 15px;
             font-size: 1.1rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            border-bottom: 1px dashed rgba(139, 92, 246, 0.3);
             padding-bottom: 10px;
             display: flex;
             align-items: center;
@@ -153,9 +182,10 @@
 
         .card-title::before {
             content: "✦";
-            color: #fbbf24;
+            color: #a855f7;
             margin-right: 8px;
             font-size: 1.2rem;
+            text-shadow: 0 0 10px #a855f7;
         }
 
         .info-card ul {
@@ -166,43 +196,44 @@
         .info-card li {
             margin-bottom: 12px;
             font-size: 0.95rem;
-            color: #475569;
+            color: #cbd5e1;
             line-height: 1.5;
             display: flex;
             align-items: flex-start;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .info-card li::before {
             content: "◆"; 
-            color: #3b82f6;
+            color: #8b5cf6;
             margin-right: 10px;
             font-size: 0.8rem;
+            text-shadow: 0 0 8px #8b5cf6;
         }
 
         .bio-text {
             font-size: 1.05rem;
-            color: #475569;
+            color: #94a3b8;
             max-width: 700px;
             line-height: 1.8;
-            font-weight: 400;
+            font-weight: 300;
             margin-top: 20px;
         }
 
-        /* --- MUSIC PLAYER --- */
+        /* --- MUSIC PLAYER DARK --- */
         .music-player {
             margin-top: 35px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.03);
             padding: 12px 25px;
             border-radius: 50px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.3);
             display: inline-block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
 
         .music-player p {
             font-size: 0.75rem;
-            color: #3b82f6;
+            color: #c084fc;
             margin-bottom: 8px;
             font-weight: 800;
             letter-spacing: 1.5px;
@@ -213,6 +244,7 @@
             height: 35px;
             border-radius: 20px;
             outline: none;
+            filter: invert(90%) hue-rotate(180deg) brightness(1.2); 
         }
 
         /* --- GALLERY SECTION --- */
@@ -225,15 +257,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
             margin-bottom: 40px;
-            color: #0f172a;
+            color: #f8fafc;
         }
 
         .section-title span {
             font-size: 0.9rem;
             color: #64748b;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         .gallery-grid {
@@ -245,13 +277,12 @@
 
         .photo-card {
             position: relative;
-            background: #ffffff;
-            border: 4px solid #ffffff;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
             border-radius: 15px;
             overflow: hidden;
             aspect-ratio: 3/4;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
         .photo-card img {
@@ -263,8 +294,8 @@
 
         .photo-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
-            border-color: #f1f5f9;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            border-color: rgba(167, 139, 250, 0.6);
         }
 
         .photo-card:hover img {
@@ -277,22 +308,32 @@
             left: 0;
             width: 100%;
             padding: 20px;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.8));
+            background: linear-gradient(transparent, rgba(9, 9, 11, 0.95));
             font-size: 0.85rem;
-            color: #ffffff;
-            font-weight: 600;
+            color: #e2e8f0;
+            font-weight: 300;
         }
 
-        /* --- BLOG SECTION --- */
+        /* --- BLOG SECTION DARK --- */
         .blog-section {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: rgba(15, 15, 20, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.3);
             border-radius: 24px;
             padding: 40px;
             text-align: center;
             margin-bottom: 80px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Ornamen Garis Cahaya di Blog */
+        .blog-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, #a855f7, transparent);
         }
 
         .blog-section h3 {
@@ -300,46 +341,46 @@
             text-transform: uppercase;
             font-weight: 800;
             margin-bottom: 10px;
-            color: #0f172a;
+            color: #f8fafc;
         }
 
         .blog-section p {
-            color: #475569;
+            color: #94a3b8;
             font-size: 0.95rem;
             margin-bottom: 25px;
-            font-weight: 600;
+            font-weight: 300;
         }
 
         .blog-button {
             display: inline-block;
-            background: #ffffff;
-            color: #3b82f6;
+            background: linear-gradient(90deg, #7e22ce, #6b21a8);
+            color: #ffffff;
             text-decoration: none;
             padding: 14px 32px;
             border-radius: 30px;
-            font-weight: 800;
+            font-weight: 600;
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border: 2px solid #3b82f6;
+            border: 1px solid #a855f7;
             transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
         }
 
         .blog-button:hover {
-            background: #3b82f6;
-            color: #ffffff;
+            background: linear-gradient(90deg, #9333ea, #7e22ce);
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
         }
 
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(148, 163, 184, 0.3);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
             color: #64748b;
-            font-weight: 600;
+            font-weight: 400;
         }
 
         @media (max-width: 768px) {
@@ -359,29 +400,31 @@
 
     <nav>
         <div class="logo">_XYVIIEE <span>// ARCHIVE</span></div>
-        <div style="font-size: 0.9rem; color: #64748b; font-weight: 800;">PORTFOLIO</div>
+        <div style="font-size: 0.9rem; color: #64748b; font-weight: 600;">PORTFOLIO</div>
     </nav>
 
     <section class="profile-section">
         
-        <!-- STRUKTUR PIRAMIDA GENSHIN -->
+        <!-- STRUKTUR PIRAMIDA DARK ELECTRO -->
         <div class="pyramid-container">
             
             <!-- PUNCAK: FOTO PROFIL -->
             <div class="pyramid-top">
                 <div class="profile-frame">
+                    <!-- FOTO PROFILMU -->
                     <img src="profile.jpeg" alt="Xyviiee Profile">
                 </div>
+                <!-- Ornamen Cahaya -->
                 <div class="genshin-star">✦</div>
                 <h1>FOTOGRAFER & <br><span>STORYTELLER.</span></h1>
             </div>
 
-            <!-- DASAR PIRAMIDA: GEAR & PRESTASI -->
+            <!-- DASAR PIRAMIDA -->
             <div class="pyramid-base">
                 
                 <!-- KIRI: KOTAK DEVICE -->
                 <div class="info-card">
-                    <div class="card-title">Gear Ku Pakai </div>
+                    <div class="card-title">Combat Gear</div>
                     <ul>
                         <li>Sony A7 II (Mirrorless)</li>
                         <li>Canon EOS 600D (DSLR)</li>
@@ -394,7 +437,7 @@
                     <div class="card-title">Milestones</div>
                     <ul>
                         <li>Juara 3 FLS2N Fotografi (Kabupaten Kediri)</li>
-                
+                        
                     </ul>
                 </div>
 
@@ -408,10 +451,10 @@
 
         <!-- MUSIC PLAYER -->
         <div class="music-player">
-            <p>Now Playing: Nod-Krai by AURORA </p>
+            <p>Play: Nod-Krai By- AURORA </p>
             <audio controls>
                 <source src="Nod-Krai.mp3" type="audio/mpeg">
-            
+         
             </audio>
         </div>
     </section>
@@ -420,39 +463,39 @@
     <h2 class="section-title">VISUAL CAPTURES <span>// PRESENT COLLECTION </span></h2>
     
     <section class="gallery-grid">
-        <div class="photo-card"><img src="portofolio-1.jpeg" alt="Koleksi Potret 1"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-2.jpeg" alt="Koleksi Potret 2"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-4.JPG" alt="Koleksi Potret 3"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-5.JPG" alt="Koleksi Potret 4"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-6.jpeg" alt="Koleksi Potret 5"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-7.jpg" alt="Koleksi Potret 6"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-8.jpg" alt="Koleksi Potret 7"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-9.jpg" alt="Koleksi Potret 8"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-10.jpg" alt="Koleksi Potret 9"><div class="photo-info"><div></div>
-        <div class="photo-card"><img src="portofolio-11.jpg" alt="Koleksi Potret 10"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-12.jpg" alt="Koleksi Potret 11"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-13.jpg" alt="Koleksi Potret 12"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-14.jpg" alt="Koleksi Potret 13"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-15.jpg" alt="Koleksi Potret 14"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-16.jpg" alt="Koleksi Potret 15"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-17.jpg" alt="Koleksi Potret 16"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-18.jpg" alt="Koleksi Potret 17"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-19.jpg" alt="Koleksi Potret 18"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-20.jpg" alt="Koleksi Potret 19"><div class="photo-info"></div></div>
-        <div class="photo-card"><img src="portofolio-21.jpg" alt="Koleksi Potret 20"><div class="photo-info"></div></div>
+        <div class="photo-card"><img src="portofolio-1.jpeg" alt="Koleksi Potret 1"><div class="photo-info">Stage Photography / Full Shot</div></div>
+        <div class="photo-card"><img src="portofolio-2.jpeg" alt="Koleksi Potret 2"><div class="photo-info">Action Freeze / Available Light</div></div>
+        <div class="photo-card"><img src="portofolio-4.JPG" alt="Koleksi Potret 3"><div class="photo-info">Low-Light Action / High Angle</div></div>
+        <div class="photo-card"><img src="portofolio-5.JPG" alt="Koleksi Potret 4"><div class="photo-info">Human Interest / Cultural</div></div>
+        <div class="photo-card"><img src="portofolio-6.jpeg" alt="Koleksi Potret 5"><div class="photo-info">Landscape View / Nature Tone</div></div>
+        <div class="photo-card"><img src="portofolio-7.jpg" alt="Koleksi Potret 6"><div class="photo-info">Shallow Depth of Field</div></div>
+        <div class="photo-card"><img src="portofolio-8.jpg" alt="Koleksi Potret 7"><div class="photo-info">Street Photography / Urban Light</div></div>
+        <div class="photo-card"><img src="portofolio-9.jpg" alt="Koleksi Potret 8"><div class="photo-info">Long Exposure / Motion Blur</div></div>
+        <div class="photo-card"><img src="portofolio-10.jpg" alt="Koleksi Potret 9"><div class="photo-info">Silhoutte / Backlighting</div></div>
+        <div class="photo-card"><img src="portofolio-11.jpg" alt="Koleksi Potret 10"><div class="photo-info">Macro Photography / Detail Shots</div></div>
+        <div class="photo-card"><img src="portofolio-12.jpg" alt="Koleksi Potret 11"><div class="photo-info">Golden Hour / Warm Tones</div></div>
+        <div class="photo-card"><img src="portofolio-13.jpg" alt="Koleksi Potret 12"><div class="photo-info">Blue Hour / Moody Atmosphere</div></div>
+        <div class="photo-card"><img src="portofolio-14.jpg" alt="Koleksi Potret 13"><div class="photo-info">Panning / Subject Tracking</div></div>
+        <div class="photo-card"><img src="portofolio-15.jpg" alt="Koleksi Potret 14"><div class="photo-info">Architectural / Leading Lines</div></div>
+        <div class="photo-card"><img src="portofolio-16.jpg" alt="Koleksi Potret 15"><div class="photo-info">Black and White / High Contrast</div></div>
+        <div class="photo-card"><img src="portofolio-17.jpg" alt="Koleksi Potret 16"><div class="photo-info">Environmental Portrait</div></div>
+        <div class="photo-card"><img src="portofolio-18.jpg" alt="Koleksi Potret 17"><div class="photo-info">Minimalist / Negative Space</div></div>
+        <div class="photo-card"><img src="portofolio-19.jpg" alt="Koleksi Potret 18"><div class="photo-info">Candid / Authentic Expressions</div></div>
+        <div class="photo-card"><img src="portofolio-20.jpg" alt="Koleksi Potret 19"><div class="photo-info">Symmetry / Centered Composition</div></div>
+        <div class="photo-card"><img src="portofolio-21.jpg" alt="Koleksi Potret 20"><div class="photo-info">Framing / Natural Borders</div></div>
     </section>
 
     <h2 class="section-title">LITERARY ARCHIVE <span>// SHORT STORY </span></h2>
     
     <section class="blog-section">
         <h3>Ini Kumpulan Cerpen Buatanku</h3>
-        <p>Kalo pingin baca cerpen cek aja tuh weblog.</p>
+        <p>Kalo pingin baca cerpen atau puisi bahkan novel bisa ke weblog ku yaa.</p>
         <a href="https://cerpengabutpiaaan.blogspot.com" target="_blank" class="blog-button">Buka Weblog Saya ➔</a>
     </section>
 
     <footer>
         <div>&copy; 2026 XYVIIEE. ALL RIGHTS RESERVED.</div>
-        <div>MINIMALIST ARCHIVE v4.0 (Mondstadt Theme)</div>
+        <div>MINIMALIST ARCHIVE v5.0 (Dark Electro Theme)</div>
     </footer>
 
     <!-- SCRIPT KEAMANAN ANTI MALING FOTO -->
