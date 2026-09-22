@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XYVIIEE ARCHIVE // PERSONAL PORTOFOLIO</title>
     <style>
-        /* --- DARK ELECTRO / INAZUMA VIBES WITH ORNAMENTS --- */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        /* --- ULTIMATE INAZUMA MAX ORNAMENT VIBES --- */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800;900&display=swap');
 
         * {
             margin: 0;
@@ -16,7 +16,13 @@
         }
 
         body {
-            background: linear-gradient(135deg, #09090b 0%, #18181b 40%, #2e1065 100%);
+            background-color: #09090b;
+            /* Latar belakang Grid Electro Listrik */
+            background-image: 
+                linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 50% 0%, #3b0764 0%, transparent 60%);
+            background-size: 40px 40px, 40px 40px, 100% 100%;
             background-attachment: fixed; 
             color: #e2e8f0;
             overflow-x: hidden;
@@ -24,16 +30,18 @@
             position: relative;
         }
 
-        /* Background Cahaya Halus */
-        body::before {
-            content: '';
+        /* WATERMARK KANJI PETIR RAKSASA */
+        body::after {
+            content: "雷";
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60vw;
+            color: rgba(168, 85, 247, 0.03);
+            font-weight: 900;
             z-index: -1;
             pointer-events: none;
+            text-shadow: 0 0 50px rgba(168, 85, 247, 0.1);
         }
 
         nav {
@@ -41,59 +49,67 @@
             justify-content: space-between;
             align-items: center;
             padding: 30px 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            border-bottom: 3px solid rgba(168, 85, 247, 0.5);
             position: relative;
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
         }
 
+        /* Ornamen Wajik di bawah Navigasi */
         nav::after {
-            content: '';
+            content: "❖";
             position: absolute;
-            bottom: -2px; left: 50%; transform: translateX(-50%);
-            width: 50px; height: 3px;
-            background: #a855f7;
-            box-shadow: 0 0 10px #a855f7;
+            bottom: -15px; left: 50%; transform: translateX(-50%);
+            color: #d8b4fe;
+            font-size: 1.5rem;
+            background: #09090b;
+            padding: 0 10px;
+            text-shadow: 0 0 15px #a855f7;
         }
 
         .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #f8fafc;
+            color: #ffffff;
+            text-shadow: 0 0 10px #a855f7;
         }
 
         .logo span {
-            color: #a855f7;
+            color: #d8b4fe;
             font-weight: 400;
         }
 
         .profile-section {
-            padding: 60px 0;
+            padding: 80px 0 60px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             position: relative;
+            z-index: 1;
         }
 
-        /* --- ORNAMEN GARIS PEMBATAS GENSHIN --- */
+        /* --- ORNAMEN GARIS PEMBATAS SUPER RAME --- */
         .genshin-divider {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            margin: 40px 0;
-            color: #a855f7;
-            font-size: 1.2rem;
-            opacity: 0.8;
+            margin: 50px 0;
+            color: #d8b4fe;
+            font-size: 1.8rem;
+            letter-spacing: 15px;
+            text-shadow: 0 0 15px #a855f7;
         }
 
         .genshin-divider::before, .genshin-divider::after {
             content: '';
-            width: 150px;
-            height: 1px;
+            width: 30%;
+            height: 3px;
             background: linear-gradient(90deg, transparent, #a855f7, transparent);
-            margin: 0 15px;
+            box-shadow: 0 0 10px #a855f7;
+            margin: 0 20px;
         }
 
         /* --- STRUKTUR PIRAMIDA --- */
@@ -102,28 +118,33 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            margin-bottom: 30px;
-            position: relative;
+            margin-bottom: 40px;
         }
 
         .pyramid-top {
             display: flex;
             flex-direction: column;
             align-items: center;
-            z-index: 2;
+            position: relative;
         }
 
-        /* Ornamen Bingkai Profil Ganda */
+        /* ANIMASI DENYUT CAHAYA PROFIL */
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), inset 0 0 20px rgba(168, 85, 247, 0.4); }
+            50% { box-shadow: 0 0 50px rgba(216, 180, 254, 0.8), inset 0 0 30px rgba(216, 180, 254, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), inset 0 0 20px rgba(168, 85, 247, 0.4); }
+        }
+
         .profile-frame {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 15px;
-            border: 2px solid #a855f7;
-            padding: 5px;
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4), inset 0 0 15px rgba(139, 92, 246, 0.4);
-            background: rgba(15, 15, 20, 0.8); 
+            margin-bottom: 20px;
+            border: 5px solid #d8b4fe;
+            padding: 8px;
+            background: #18181b; 
+            animation: pulseGlow 3s infinite alternate;
             position: relative;
         }
 
@@ -132,100 +153,98 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
+            border: 2px solid rgba(139, 92, 246, 0.5);
         }
 
         .genshin-star {
-            color: #d8b4fe; 
-            font-size: 2.5rem; 
-            margin-top: -25px; 
-            margin-bottom: 5px; 
-            text-shadow: 0 0 20px #a855f7;
+            color: #ffffff; 
+            font-size: 3.5rem; 
+            margin-top: -35px; 
+            margin-bottom: 10px; 
+            text-shadow: 0 0 30px #d8b4fe, 0 0 15px #a855f7;
+            animation: pulseGlow 2s infinite alternate;
         }
 
         .pyramid-top h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 900;
             line-height: 1;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #f8fafc;
-            margin-bottom: 25px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 0 5px 20px rgba(168, 85, 247, 0.8);
         }
 
         .pyramid-top h1 span {
             color: transparent;
-            -webkit-text-stroke: 1px #a855f7;
-            text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+            -webkit-text-stroke: 2px #d8b4fe;
+            text-shadow: none;
         }
 
         .pyramid-base {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
         }
 
-        /* --- KOTAK INFO DENGAN ORNAMEN SUDUT --- */
+        /* --- KOTAK INFO FULL ORNAMEN --- */
         .info-card {
-            background: rgba(15, 15, 20, 0.7); 
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            padding: 30px;
+            background: linear-gradient(135deg, rgba(30, 20, 50, 0.9), rgba(15, 10, 25, 0.9)); 
+            border: 2px solid #a855f7;
+            padding: 35px 30px;
             width: 100%;
-            max-width: 380px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(12px);
+            max-width: 400px;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), inset 0 0 20px rgba(139, 92, 246, 0.2);
             position: relative;
-            transition: 0.3s;
+            transition: 0.4s;
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
         }
 
-        /* Ornamen Siku Kiri Atas */
+        /* Ornamen Sudut Ekstra Tebal */
         .info-card::before {
-            content: '';
+            content: '✧';
             position: absolute;
-            top: -1px; left: -1px;
-            width: 25px; height: 25px;
-            border-top: 3px solid #d8b4fe;
-            border-left: 3px solid #d8b4fe;
-            box-shadow: -2px -2px 10px rgba(168, 85, 247, 0.5);
+            top: 5px; left: 15px;
+            color: #d8b4fe;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px #d8b4fe;
         }
-
-        /* Ornamen Siku Kanan Bawah */
         .info-card::after {
-            content: '';
+            content: '✧';
             position: absolute;
-            bottom: -1px; right: -1px;
-            width: 25px; height: 25px;
-            border-bottom: 3px solid #d8b4fe;
-            border-right: 3px solid #d8b4fe;
-            box-shadow: 2px 2px 10px rgba(168, 85, 247, 0.5);
+            bottom: 5px; right: 15px;
+            color: #d8b4fe;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px #d8b4fe;
         }
 
         .info-card:hover {
-            box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
-            transform: translateY(-5px);
-            border-color: rgba(167, 139, 250, 0.5);
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.6), inset 0 0 30px rgba(168, 85, 247, 0.4);
+            transform: scale(1.03);
+            border-color: #d8b4fe;
         }
 
         .card-title {
-            font-weight: 800;
-            color: #d8b4fe;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            letter-spacing: 1.5px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
-            padding-bottom: 10px;
+            border-bottom: 3px double #a855f7;
+            padding-bottom: 15px;
             display: flex;
             align-items: center;
+            text-shadow: 0 0 15px #a855f7;
         }
 
         .card-title::before {
-            content: "✦";
-            color: #a855f7;
-            margin-right: 10px;
-            font-size: 1.3rem;
-            text-shadow: 0 0 10px #a855f7;
+            content: "⚡";
+            margin-right: 15px;
+            font-size: 1.5rem;
         }
 
         .info-card ul {
@@ -234,214 +253,204 @@
         }
 
         .info-card li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            color: #cbd5e1;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #e2e8f0;
             line-height: 1.5;
             display: flex;
             align-items: flex-start;
+            font-weight: 600;
         }
 
         .info-card li::before {
             content: "❖"; 
-            color: #8b5cf6;
-            margin-right: 10px;
-            font-size: 0.9rem;
+            color: #d8b4fe;
+            margin-right: 15px;
+            font-size: 1rem;
+            text-shadow: 0 0 10px #a855f7;
         }
 
         .bio-text {
-            font-size: 1.05rem;
-            color: #94a3b8;
-            max-width: 700px;
-            line-height: 1.8;
-            font-weight: 300;
-            margin-top: 20px;
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            line-height: 2;
+            font-weight: 400;
+            margin-top: 30px;
+            background: rgba(15, 10, 25, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* --- MUSIC PLAYER DARK --- */
+        /* --- MUSIC PLAYER MAX ORNAMENT --- */
         .music-player {
-            margin-top: 35px;
-            background: rgba(15, 15, 20, 0.8);
-            padding: 12px 25px;
+            margin-top: 40px;
+            background: linear-gradient(90deg, rgba(59, 7, 100, 0.8), rgba(88, 28, 135, 0.8));
+            padding: 15px 35px;
             border-radius: 50px;
-            border: 1px solid rgba(139, 92, 246, 0.5);
+            border: 2px solid #d8b4fe;
             display: inline-block;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
-            position: relative;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
         }
 
         .music-player p {
-            font-size: 0.75rem;
-            color: #d8b4fe;
-            margin-bottom: 8px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 900;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            text-shadow: 0 0 10px #d8b4fe;
         }
 
         audio {
-            height: 35px;
+            height: 40px;
             border-radius: 20px;
             outline: none;
-            filter: invert(90%) hue-rotate(180deg) brightness(1.2); 
+            filter: invert(100%) hue-rotate(180deg) brightness(1.5); 
         }
 
         /* --- GALLERY SECTION --- */
         .section-title {
-            font-size: 2rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            color: #f8fafc;
+            color: #ffffff;
+            text-shadow: 0 0 20px #a855f7;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
         }
 
-        .section-title span {
-            font-size: 0.9rem;
-            color: #8b5cf6;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
+        .section-title::before { content: '✧ ✦ ✧ '; color: #d8b4fe; margin-right: 20px; }
+        .section-title::after { content: ' ✧ ✦ ✧'; color: #d8b4fe; margin-left: 20px; }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
-        /* ORNAMEN FOTO CARD */
+        /* ORNAMEN FOTO CARD SUPER TEBAL */
         .photo-card {
             position: relative;
-            background: rgba(15, 15, 20, 0.5);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 8px;
+            background: #18181b;
+            border: 3px solid #7e22ce;
+            border-radius: 12px;
             overflow: hidden;
             aspect-ratio: 3/4;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 8px; /* Memberi jarak bingkai dalam */
+            transition: 0.4s;
+            padding: 10px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.8), inset 0 0 20px rgba(139, 92, 246, 0.3);
         }
 
         .photo-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 4px;
-            background: #18181b; /* Warna abu gelap kalau foto kosong */
+            border-radius: 8px;
+            border: 1px solid rgba(216, 180, 254, 0.3);
         }
 
         .photo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-            border-color: #a855f7;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.6);
+            border-color: #d8b4fe;
         }
 
         .photo-info {
             position: absolute;
-            bottom: 8px;
-            left: 8px;
-            width: calc(100% - 16px);
-            padding: 15px;
-            background: linear-gradient(transparent, rgba(9, 9, 11, 0.95));
-            font-size: 0.85rem;
-            color: #e2e8f0;
-            font-weight: 400;
-            border-bottom-left-radius: 4px;
-            border-bottom-right-radius: 4px;
+            bottom: 10px; left: 10px;
+            width: calc(100% - 20px);
+            padding: 20px 15px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95) 40%);
+            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 800;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
             text-align: center;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* --- BLOG SECTION DARK --- */
+        /* --- BLOG SECTION SUPER RAME --- */
         .blog-section {
-            background: rgba(15, 15, 20, 0.7);
-            border: 1px solid rgba(139, 92, 246, 0.4);
-            padding: 50px;
+            background: linear-gradient(45deg, #1e1b4b, #3b0764);
+            border: 4px solid #a855f7;
+            padding: 60px;
             text-align: center;
             margin-bottom: 80px;
-            backdrop-filter: blur(10px);
-            box-shadow: inset 0 0 50px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.4), inset 0 0 30px rgba(0,0,0,0.8);
             position: relative;
+            outline: 2px dashed #d8b4fe;
+            outline-offset: -15px;
         }
         
-        /* Ornamen Sudut Atas Bawah Blog */
-        .blog-section::before, .blog-section::after {
-            content: "❖";
-            position: absolute;
-            color: #a855f7;
-            font-size: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .blog-section::before { top: 10px; }
-        .blog-section::after { bottom: 10px; }
-
         .blog-section h3 {
-            font-size: 1.6rem;
+            font-size: 2rem;
             text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: #f8fafc;
-            letter-spacing: 1px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px #d8b4fe;
         }
 
         .blog-section p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-            font-weight: 400;
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            font-weight: 600;
         }
 
         .blog-button {
             display: inline-block;
-            background: transparent;
-            color: #d8b4fe;
+            background: #7e22ce;
+            color: #ffffff;
             text-decoration: none;
-            padding: 14px 35px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            padding: 18px 45px;
+            font-weight: 900;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid #a855f7;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 2px;
+            border: 2px solid #d8b4fe;
+            border-radius: 5px;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(216, 180, 254, 0.6);
         }
 
         .blog-button:hover {
-            background: rgba(168, 85, 247, 0.2);
-            color: #ffffff;
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
-            text-shadow: 0 0 5px #fff;
+            background: #d8b4fe;
+            color: #3b0764;
+            transform: scale(1.1);
+            box-shadow: 0 0 40px #ffffff;
         }
 
         footer {
-            padding: 40px 0;
-            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            padding: 50px 0;
+            border-top: 3px double rgba(168, 85, 247, 0.5);
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
-            color: #64748b;
-            font-weight: 400;
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: #09090b;
         }
 
         @media (max-width: 768px) {
-            .pyramid-base {
-                flex-direction: column;
-                align-items: center;
-            }
-            .section-title {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-            footer {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
+            .pyramid-base { flex-direction: column; align-items: center; }
+            .section-title { font-size: 1.5rem; }
+            .section-title::before, .section-title::after { display: none; }
+            footer { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -449,7 +458,7 @@
 
     <nav>
         <div class="logo">_XYVIIEE <span>// ARCHIVE</span></div>
-        <div style="font-size: 0.9rem; color: #a855f7; font-weight: 800; letter-spacing: 1px;">PORTFOLIO</div>
+        <div style="font-size: 1rem; color: #d8b4fe; font-weight: 900; letter-spacing: 2px;">⚡ PORTFOLIO ⚡</div>
     </nav>
 
     <section class="profile-section">
@@ -458,7 +467,7 @@
             
             <div class="pyramid-top">
                 <div class="profile-frame">
-                    <img src="profile.jpeg" alt="Xyviiee Profile">
+                    <img src="profile.jpeg" onerror="this.style.display='none'">
                 </div>
                 <div class="genshin-star">✦</div>
                 <h1>FOTOGRAFER & <br><span>STORYTELLER.</span></h1>
@@ -478,8 +487,8 @@
                 <div class="info-card">
                     <div class="card-title">Milestones</div>
                     <ul>
-                        <li>Juara 3 FLS2N Fotografi (Kabupaten Kediri)</li>
-                       
+                        <li>Juara 3 FLS2N Fotografi (Kab. Kediri)</li>
+                      
                     </ul>
                 </div>
 
@@ -492,60 +501,53 @@
         </p>
 
         <div class="music-player">
-            <p>Now Playing: Nod-Krai By Aurora</p>
+            <p>✦ Now Playing: Nod-Krai By AURORA ✦</p>
             <audio controls>
                 <source src="Nod-Krai.mp3" type="audio/mpeg">
-               
             </audio>
         </div>
     </section>
 
     <!-- ORNAMEN PEMBATAS -->
-    <div class="genshin-divider">✦</div>
+    <div class="genshin-divider">✦ ❖ ✦</div>
 
-    <div style="padding: 20px 0 30px 0;">
-        <h2 class="section-title">VISUAL CAPTURES <span>// PRESENT COLLECTION </span></h2>
-    </div>
+    <h2 class="section-title">VISUAL CAPTURES</h2>
     
     <section class="gallery-grid">
-        <div class="photo-card"><img src="portofolio-1.jpeg" alt=""><div class="photo-info">Stage Photography / Full Shot</div></div>
-        <div class="photo-card"><img src="portofolio-2.jpeg" alt=""><div class="photo-info">Action Freeze / Available Light</div></div>
-        <div class="photo-card"><img src="portofolio-4.JPG" alt=""><div class="photo-info">Low-Light Action / High Angle</div></div>
-        <div class="photo-card"><img src="portofolio-5.JPG" alt=""><div class="photo-info">Human Interest / Cultural</div></div>
-        <div class="photo-card"><img src="portofolio-6.jpeg" alt=""><div class="photo-info">Landscape View / Nature Tone</div></div>
-        <div class="photo-card"><img src="portofolio-7.jpg" alt=""><div class="photo-info">Shallow Depth of Field</div></div>
-        <div class="photo-card"><img src="portofolio-8.jpg" alt=""><div class="photo-info">Street Photography / Urban Light</div></div>
-        <div class="photo-card"><img src="portofolio-9.jpg" alt=""><div class="photo-info">Long Exposure / Motion Blur</div></div>
-        <div class="photo-card"><img src="portofolio-10.jpg" alt=""><div class="photo-info">Silhoutte / Backlighting</div></div>
-        <div class="photo-card"><img src="portofolio-11.jpg" alt=""><div class="photo-info">Macro Photography / Detail Shots</div></div>
-        <div class="photo-card"><img src="portofolio-12.jpg" alt=""><div class="photo-info">Golden Hour / Warm Tones</div></div>
-        <div class="photo-card"><img src="portofolio-13.jpg" alt=""><div class="photo-info">Blue Hour / Moody Atmosphere</div></div>
-        <div class="photo-card"><img src="portofolio-14.jpg" alt=""><div class="photo-info">Panning / Subject Tracking</div></div>
-        <div class="photo-card"><img src="portofolio-15.jpg" alt=""><div class="photo-info">Architectural / Leading Lines</div></div>
-        <div class="photo-card"><img src="portofolio-16.jpg" alt=""><div class="photo-info">Black and White / High Contrast</div></div>
-        <div class="photo-card"><img src="portofolio-17.jpg" alt=""><div class="photo-info">Environmental Portrait</div></div>
-        <div class="photo-card"><img src="portofolio-18.jpg" alt=""><div class="photo-info">Minimalist / Negative Space</div></div>
-        <div class="photo-card"><img src="portofolio-19.jpg" alt=""><div class="photo-info">Candid / Authentic Expressions</div></div>
-        <div class="photo-card"><img src="portofolio-20.jpg" alt=""><div class="photo-info">Symmetry / Centered Composition</div></div>
-        <div class="photo-card"><img src="portofolio-21.jpg" alt=""><div class="photo-info">Framing / Natural Borders</div></div>
+        <div class="photo-card"><img src="portofolio-1.jpeg" onerror="this.style.display='none'"><div class="photo-info">Stage / Full Shot</div></div>
+        <div class="photo-card"><img src="portofolio-2.jpeg" onerror="this.style.display='none'"><div class="photo-info">Action / Freeze</div></div>
+        <div class="photo-card"><img src="portofolio-4.JPG" onerror="this.style.display='none'"><div class="photo-info">Low-Light / High Angle</div></div>
+        <div class="photo-card"><img src="portofolio-5.JPG" onerror="this.style.display='none'"><div class="photo-info">Human Interest</div></div>
+        <div class="photo-card"><img src="portofolio-6.jpeg" onerror="this.style.display='none'"><div class="photo-info">Landscape View</div></div>
+        <div class="photo-card"><img src="portofolio-7.jpg" onerror="this.style.display='none'"><div class="photo-info">Depth of Field</div></div>
+        <div class="photo-card"><img src="portofolio-8.jpg" onerror="this.style.display='none'"><div class="photo-info">Street / Urban Light</div></div>
+        <div class="photo-card"><img src="portofolio-9.jpg" onerror="this.style.display='none'"><div class="photo-info">Long Exposure</div></div>
+        <div class="photo-card"><img src="portofolio-10.jpg" onerror="this.style.display='none'"><div class="photo-info">Silhoutte</div></div>
+        <div class="photo-card"><img src="portofolio-11.jpg" onerror="this.style.display='none'"><div class="photo-info">Macro / Detail</div></div>
+        <div class="photo-card"><img src="portofolio-12.jpg" onerror="this.style.display='none'"><div class="photo-info">Golden Hour</div></div>
+        <div class="photo-card"><img src="portofolio-13.jpg" onerror="this.style.display='none'"><div class="photo-info">Blue Hour</div></div>
+        <div class="photo-card"><img src="portofolio-14.jpg" onerror="this.style.display='none'"><div class="photo-info">Panning</div></div>
+        <div class="photo-card"><img src="portofolio-15.jpg" onerror="this.style.display='none'"><div class="photo-info">Architectural</div></div>
+        <div class="photo-card"><img src="portofolio-16.jpg" onerror="this.style.display='none'"><div class="photo-info">Black & White</div></div>
+        <div class="photo-card"><img src="portofolio-17.jpg" onerror="this.style.display='none'"><div class="photo-info">Environmental</div></div>
+        <div class="photo-card"><img src="portofolio-18.jpg" onerror="this.style.display='none'"><div class="photo-info">Minimalist</div></div>
+        <div class="photo-card"><img src="portofolio-19.jpg" onerror="this.style.display='none'"><div class="photo-info">Candid</div></div>
+        <div class="photo-card"><img src="portofolio-20.jpg" onerror="this.style.display='none'"><div class="photo-info">Symmetry</div></div>
+        <div class="photo-card"><img src="portofolio-21.jpg" onerror="this.style.display='none'"><div class="photo-info">Framing</div></div>
     </section>
 
     <!-- ORNAMEN PEMBATAS -->
-    <div class="genshin-divider">✦</div>
-
-    <div style="padding: 10px 0 30px 0;">
-        <h2 class="section-title">LITERARY ARCHIVE <span>// SHORT STORY </span></h2>
-    </div>
+    <div class="genshin-divider">✦ ❖ ✦</div>
     
     <section class="blog-section">
-        <h3>Ini Kumpulan Cerpen Buatanku</h3>
-        <p>Kalo pingin baca cerpen tuh weblog ku.</p>
-        <a href="https://cerpengabutpiaaan.blogspot.com" target="_blank" class="blog-button">Buka Weblog Saya ➔</a>
+        <h3>LITERARY ARCHIVE </h3>
+        <p>Kumpulan Cerpen, Puisi, dan Novel Buatanku</p>
+        <a href="https://cerpengabutpiaaan.blogspot.com" target="_blank" class="blog-button">BUKA WEBLOG ➔</a>
     </section>
 
     <footer>
         <div>&copy; 2026 XYVIIEE. ALL RIGHTS RESERVED.</div>
-        <div>INAZUMA ARCHIVE v6.0 </div>
+        <div> Vol.06.01.3050</div>
     </footer>
 
     <!-- SCRIPT KEAMANAN -->
